@@ -8,10 +8,10 @@
  * Controller of the unswsociApp
  */
 angular.module('unswsociApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($rootScope) {
+    console.log('init MainCtrl');
+    $rootScope.$on('$stateChangeStart', 
+      function(event, toState, toParams, fromState, fromParams){ 
+        console.log('from', fromState, 'to', toState);
+      });
   });

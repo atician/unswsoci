@@ -8,19 +8,17 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="unswsociApp">
-    <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+  <body ng-app="unswsociApp" layout="column" layout-align="start">
 
     <!-- Add your site or application content here -->
-    <div class="header">
+<!--     <div class="header">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
           <div class="navbar-header">
@@ -48,7 +46,7 @@
     </div>
 
     <div class="container">
-    <div ng-view=""></div>
+      <div ui-view></div>
     </div>
 
     <div class="footer">
@@ -56,10 +54,106 @@
         <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
       </div>
     </div>
+ -->
+    <section id="header" layout="row" layout-align="center">
+      <img class="logo logo-header" src="images/header-logo.jpg">
+    </section>
 
+    <section id="primary-nav" layout="row" layout-align="center">
+      <div class="nav" layout="row">
+        <div class="nav-item"
+          ng-repeat="item in ['home', 'about us', 'events', 'contact us', 'online store']">
+          <span class="nav-item-text"
+            ui-sref="root.{{item}}"
+            layout="row"
+            layout-align="center center">
+            {{item | uppercase}}
+          </span>
+          <!-- sub tabs for home -->
+          <div class="nav-dropdown" ng-if="$index === 0">
+            <div class="nav-item"
+              ng-repeat="item in ['details', 'scores', 'draw', 'wet weather', 'applications']">
+              <span class="nav-item-text"
+                ui-sref="home.{{item}}"
+                layout="row"
+                layout-align="center center">
+                {{item | uppercase}}
+              </span>
+            </div>
+          </div>
+          <!-- sub tabs for about us -->
+          <div class="nav-dropdown" ng-if="$index === 1">
+            <div class="nav-item"
+              ng-repeat="item in ['vision', 'history', 'executives', 'home fields']">
+              <span class="nav-item-text"
+                ui-sref="about us.{{item}}"
+                layout="row"
+                layout-align="center center">
+                {{item | uppercase}}
+              </span>
+              <!-- sub sub tabs for home fields -->
+              <div class="nav-dropdown nav-dropdown-right" ng-if="$index === 3">
+                <div class="nav-item"
+                  ng-repeat="item in ['vg', 'asb', 'dp']">
+                  <span class="nav-item-text"
+                    ui-sref="about us.home fields.{{item}}"
+                    layout="row"
+                    layout-align="center center">
+                    {{item | uppercase}}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- sub tabs for events -->
+          <div class="nav-dropdown" ng-if="$index === 2">
+            <div class="nav-item"
+              ng-repeat="item in ['calendar']">
+              <span class="nav-item-text"
+                ui-sref="events.{{item}}"
+                layout="row"
+                layout-align="center center">
+                {{item | uppercase}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="main-content" layout="row" layout-align="space-between">
+      <md-whiteframe class="md-whiteframe-z3" flex="70" ui-view>
+        <!-- content based on route -->
+      </md-whiteframe>
+      <md-whiteframe class="md-whiteframe-z3" flex>
+        <img class="logo" src="images/sponsors/arc.jpg">
+      </md-whiteframe>
+    </section>
+
+    <section id="footer" layout="column">
+      <div layout="row">
+        <div class="box white" flex></div>
+        <div class="box yellow" flex></div>
+        <div class="box blue" flex></div>
+      </div>
+      <br>
+      <div layout="row" layout-align="space-around start">
+        <div flex layout="row" layout-align="center">
+          <p>UNSW social soccer society</p>
+        </div>
+        <div flex layout="row" layout-align="center">
+          <ul>
+            <li>HOME</li>
+            <li>ABOUT</li>
+          </ul>
+        </div>
+        <div flex layout="row" layout-align="center">
+          <p>Follow us</p>
+        </div>
+      </div>
+    </section>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
+<!--      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
@@ -68,14 +162,17 @@
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
     </script>
-
+ -->
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

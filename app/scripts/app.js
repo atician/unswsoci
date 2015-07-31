@@ -10,22 +10,143 @@
  */
 angular
   .module('unswsociApp', [
-    'ngRoute',
-    'ngTouch'
+    'ngTouch',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
+  // .config(function ($routeProvider) {
+  //   $routeProvider
+  //     .when('/', {
+  //       templateUrl: 'views/main.html',
+  //       controller: 'MainCtrl',
+  //       controllerAs: 'main'
+  //     })
+  //     .when('/about', {
+  //       templateUrl: 'views/about.html',
+  //       controller: 'AboutCtrl',
+  //       controllerAs: 'about'
+  //     })
+  //     .otherwise({
+  //       redirectTo: '/'
+  //     });
+  // });
+  .run(function($rootScope) {
+      $rootScope.$on('$stateChangeStart', 
+      function(event, toState, toParams, fromState, fromParams){ 
+        console.log('start', 'from', fromState, 'to', toState);
       });
+      $rootScope.$on('$stateChangeSuccess', 
+      function(event, toState, toParams, fromState, fromParams){
+        console.log('success', 'from', fromState, 'to', toState);
+      });
+  })
+  .config(function($stateProvider, $urlRouterProvider) {
+    //
+    // For any unmatched url, redirect to /
+    $urlRouterProvider.otherwise('/home/details');
+    // Now set up the states
+    $stateProvider
+      .state('root', {
+        url: '/',
+        abstract: true,
+        template: '<ui-view/>'
+      })
+      .state('root.home', {
+        url: 'home/details',
+        templateUrl: 'views/home/home.html'
+      })
+      .state('root.about us', {
+        url: 'about us/vision',
+        templateUrl: 'views/about-us/vision.html'
+      })
+      .state('root.events', {
+        url: 'events/calendar',
+        templateUrl: 'views/events/calendar.html'
+      })
+      .state('root.contact us', {
+        url: 'contact us',
+        templateUrl: 'views/contact-us/contact-us.html'
+      })
+      .state('root.online store', {
+        url: 'online store',
+        templateUrl: 'views/online-store/online-store.html'
+      })
+      // home
+      .state('home', {
+        url: '/home',
+        abstract: true,
+        template: '<ui-view/>'
+      })
+      .state('home.details', {
+        url: '/details',
+        templateUrl: 'views/home/home.html'
+      })
+      .state('home.scores', {
+        url: '/scores',
+        templateUrl: 'views/home/scores.html'
+      })
+      .state('home.draw', {
+        url: '/draw',
+        templateUrl: 'views/home/draw.html'
+      })
+      .state('home.wet weather', {
+        url: '/wet weather',
+        templateUrl: 'views/home/wet-weather.html'
+      })
+      .state('home.applications', {
+        url: '/applications',
+        templateUrl: 'views/home/applications.html'
+      })
+      // about us
+      .state('about us', {
+        url: '/about us',
+        abstract: true,
+        template: '<ui-view/>'
+      })
+      .state('about us.vision', {
+        url: '/vision',
+        templateUrl: 'views/about-us/vision.html'
+      })
+      .state('about us.history', {
+        url: '/history',
+        templateUrl: 'views/about-us/history.html'
+      })
+      .state('about us.executives', {
+        url: '/excutives',
+        templateUrl: 'views/about-us/executives.html'
+      })
+      .state('about us.home fields', {
+        url: '/home fields',
+        templateUrl: 'views/about-us/home-fields.html'
+      })
+      // events
+      .state('events', {
+        url: '/events',
+        abstract: true,
+        template: '<ui-view/>'
+      })
+      .state('events.calendar', {
+        url: '/calendar',
+        templateUrl: 'views/events/calendar.html'
+      })
+      // contact us
+      .state('contact us', {
+        url: '/contact us',
+        abstract: true,
+        template: '<ui-view/>'
+      })
+      .state('contact us.contact us', {
+        url: '/contact us',
+        templateUrl: 'views/contact-us/contact-us.html'
+      })
+      // online store
+      .state('online store', {
+        url: '/online store',
+        abstract: true,
+        template: '<ui-view/>'
+      })
+      .state('online store.online store', {
+        url: '/online store',
+        templateUrl: 'views/online-store/online-store.html'
+      })
+      ;
   });

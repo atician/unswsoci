@@ -1,0 +1,22 @@
+@import "../variables.scss";
+body {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  margin: 0;
+  padding: 1% 5%;
+  //background-color: silver;
+  font-size: 2em;
+  font-family: 'Roboto', sans-serif;
+  height: auto;
+  background-image: url("/images/background.png")
+}
+section {
+  //padding: 0 1%;
+}
+md-whiteframe {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  min-height: 400px;
+}
