@@ -65,3 +65,20 @@
 .blue {
   background-color: $blue;
 }
+.media-icon {
+  a:link, a:visited, a:hover, a:active {
+    color: white;
+  }
+  i {
+    color: $yellow;
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+.header-media-container {
+  // position: absolute;
+  // right: 0;
+  // bottom: 0;
+  z-index: 1000;
+}

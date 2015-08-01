@@ -1,8 +1,5 @@
 @import "../variables.scss";
 body {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
   margin: 0;
   padding: 1% 5%;
   //background-color: silver;
@@ -18,5 +15,5 @@ md-whiteframe {
   background: white;
   margin: 20px;
   padding: 20px;
-  min-height: 400px;
+  min-height: 500px;
 }

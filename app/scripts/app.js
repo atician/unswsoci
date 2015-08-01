@@ -29,16 +29,16 @@ angular
   //       redirectTo: '/'
   //     });
   // });
-  .run(function($rootScope) {
-      $rootScope.$on('$stateChangeStart', 
-      function(event, toState, toParams, fromState, fromParams){ 
-        console.log('start', 'from', fromState, 'to', toState);
-      });
-      $rootScope.$on('$stateChangeSuccess', 
-      function(event, toState, toParams, fromState, fromParams){
-        console.log('success', 'from', fromState, 'to', toState);
-      });
-  })
+  // .run(function($rootScope) {
+  //     $rootScope.$on('$stateChangeStart', 
+  //     function(event, toState, toParams, fromState, fromParams){ 
+  //       console.log('start', 'from', fromState, 'to', toState);
+  //     });
+  //     $rootScope.$on('$stateChangeSuccess', 
+  //     function(event, toState, toParams, fromState, fromParams){
+  //       console.log('success', 'from', fromState, 'to', toState);
+  //     });
+  // })
   .config(function($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /
@@ -50,6 +50,7 @@ angular
         abstract: true,
         template: '<ui-view/>'
       })
+      // top level routes; index pages
       .state('root.home', {
         url: 'home/details',
         templateUrl: 'views/home/home.html'
@@ -57,6 +58,10 @@ angular
       .state('root.about us', {
         url: 'about us/vision',
         templateUrl: 'views/about-us/vision.html'
+      })
+      .state('root.home fields', {
+        url: 'about us/home fields/village green',
+        templateUrl: 'views/about-us/home-fields/village-green.html'
       })
       .state('root.events', {
         url: 'events/calendar',
@@ -114,9 +119,23 @@ angular
         url: '/excutives',
         templateUrl: 'views/about-us/executives.html'
       })
+      // home fields
       .state('about us.home fields', {
         url: '/home fields',
-        templateUrl: 'views/about-us/home-fields.html'
+        abstract: true,
+        template: '<ui-view/>'
+      })
+      .state('about us.home fields.village green', {
+        url: '/village green',
+        templateUrl: 'views/about-us/home-fields/village-green.html'
+      })
+      .state('about us.home fields.asb', {
+        url: '/asb',
+        templateUrl: 'views/about-us/home-fields/asb.html'
+      })
+      .state('about us.home fields.david phillips', {
+        url: '/david phillips',
+        templateUrl: 'views/about-us/home-fields/david-phillips.html'
       })
       // events
       .state('events', {

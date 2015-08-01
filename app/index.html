@@ -14,49 +14,30 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   </head>
-  <body ng-app="unswsociApp" layout="column" layout-align="start">
+  <body ng-app="unswsociApp" layout="column" layout-align="start center">
 
     <!-- Add your site or application content here -->
-<!--     <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="#/">unswsoci</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
+    <section id="header" layout="row" layout-align="center end">
+      <img class="logo logo-header" src="images/header-logo.jpg">
+      <div class="header-media-container" layout="row">
+        <div class="media-icon">
+          <a href="http://twitter.com/unswsoc3" target="_blank">
+            <i ng-class="'fa fa-twitter-square fa-2x fa-fw'"></i>
+          </a>
+        </div>
+        <div class="media-icon">
+          <a href="http://instagram.com/unswsocialsoccer" target="_blank">
+            <i ng-class="'fa fa-facebook-square fa-2x fa-fw'"></i>
+          </a>
+        </div>
+        <div class="media-icon">
+          <a href="http://www.facebook.com/unswsocialsoccer" target="_blank">
+            <i ng-class="'fa fa-instagram fa-2x fa-fw'"></i>
+          </a>
         </div>
       </div>
-    </div>
-
-    <div class="container">
-      <div ui-view></div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
- -->
-    <section id="header" layout="row" layout-align="center">
-      <img class="logo logo-header" src="images/header-logo.jpg">
     </section>
 
     <section id="primary-nav" layout="row" layout-align="center">
@@ -84,17 +65,25 @@
           <!-- sub tabs for about us -->
           <div class="nav-dropdown" ng-if="$index === 1">
             <div class="nav-item"
-              ng-repeat="item in ['vision', 'history', 'executives', 'home fields']">
+              ng-repeat="item in ['vision', 'history', 'executives']">
               <span class="nav-item-text"
                 ui-sref="about us.{{item}}"
                 layout="row"
                 layout-align="center center">
                 {{item | uppercase}}
               </span>
-              <!-- sub sub tabs for home fields -->
-              <div class="nav-dropdown nav-dropdown-right" ng-if="$index === 3">
+            </div>
+            <!-- home fields and sub sub tabs for home fields -->
+            <div class="nav-item">
+              <span class="nav-item-text"
+                ui-sref="root.home fields"
+                layout="row"
+                layout-align="center center">
+                {{'home fields' | uppercase}}
+              </span>
+              <div class="nav-dropdown nav-dropdown-right">
                 <div class="nav-item"
-                  ng-repeat="item in ['vg', 'asb', 'dp']">
+                  ng-repeat="item in ['village green', 'asb', 'david phillips']">
                   <span class="nav-item-text"
                     ui-sref="about us.home fields.{{item}}"
                     layout="row"
@@ -122,10 +111,13 @@
     </section>
 
     <section id="main-content" layout="row" layout-align="space-between">
+      <!-- main content -->
       <md-whiteframe class="md-whiteframe-z3" flex="70" ui-view>
         <!-- content based on route -->
       </md-whiteframe>
-      <md-whiteframe class="md-whiteframe-z3" flex>
+      <!-- sponsorship content -->
+      <md-whiteframe class="md-whiteframe-z3" flex layout="column" layout-align="start center">
+        <h3><strong>Sponsors</strong></h3>
         <img class="logo" src="images/sponsors/arc.jpg">
       </md-whiteframe>
     </section>
@@ -139,16 +131,27 @@
       <br>
       <div layout="row" layout-align="space-around start">
         <div flex layout="row" layout-align="center">
-          <p>UNSW social soccer society</p>
+          <p><strong>UNSW Social Soccer Society</strong></p>
         </div>
-        <div flex layout="row" layout-align="center">
-          <ul>
-            <li>HOME</li>
-            <li>ABOUT</li>
-          </ul>
-        </div>
-        <div flex layout="row" layout-align="center">
-          <p>Follow us</p>
+        <div flex layout="column" layout-align="center center">
+          <p><strong>Follow us</strong></p>
+          <div layout="row">
+            <div class="media-icon">
+              <a href="http://twitter.com/unswsoc3" target="_blank">
+                <i ng-class="'fa fa-twitter-square fa-2x fa-fw'"></i>
+              </a>
+            </div>
+            <div class="media-icon">
+              <a href="http://instagram.com/unswsocialsoccer" target="_blank">
+                <i ng-class="'fa fa-facebook-square fa-2x fa-fw'"></i>
+              </a>
+            </div>
+            <div class="media-icon">
+              <a href="http://www.facebook.com/unswsocialsoccer" target="_blank">
+                <i ng-class="'fa fa-instagram fa-2x fa-fw'"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
