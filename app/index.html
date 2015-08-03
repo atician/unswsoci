@@ -28,12 +28,12 @@
           </a>
         </div>
         <div class="media-icon">
-          <a href="http://instagram.com/unswsocialsoccer" target="_blank">
+          <a href="http://www.facebook.com/unswsocialsoccer" target="_blank">
             <i ng-class="'fa fa-facebook-square fa-2x fa-fw'"></i>
           </a>
         </div>
         <div class="media-icon">
-          <a href="http://www.facebook.com/unswsocialsoccer" target="_blank">
+          <a href="http://instagram.com/unswsocialsoccer" target="_blank">
             <i ng-class="'fa fa-instagram fa-2x fa-fw'"></i>
           </a>
         </div>
@@ -65,7 +65,7 @@
           <!-- sub tabs for about us -->
           <div class="nav-dropdown" ng-if="$index === 1">
             <div class="nav-item"
-              ng-repeat="item in ['vision', 'history', 'executives']">
+              ng-repeat="item in ['vision', 'history', 'executives', 'home fields']">
               <span class="nav-item-text"
                 ui-sref="about us.{{item}}"
                 layout="row"
@@ -74,12 +74,13 @@
               </span>
             </div>
             <!-- home fields and sub sub tabs for home fields -->
-            <div class="nav-item">
+<!--             <div class="nav-item"
+              ng-repeat="item in ['home fields']">
               <span class="nav-item-text"
-                ui-sref="root.home fields"
+                ui-sref="root.{{item}}"
                 layout="row"
                 layout-align="center center">
-                {{'home fields' | uppercase}}
+                {{item | uppercase}}
               </span>
               <div class="nav-dropdown nav-dropdown-right">
                 <div class="nav-item"
@@ -92,7 +93,7 @@
                   </span>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <!-- sub tabs for events -->
           <div class="nav-dropdown" ng-if="$index === 2">
@@ -142,12 +143,12 @@
               </a>
             </div>
             <div class="media-icon">
-              <a href="http://instagram.com/unswsocialsoccer" target="_blank">
+              <a href="http://www.facebook.com/unswsocialsoccer" target="_blank">
                 <i ng-class="'fa fa-facebook-square fa-2x fa-fw'"></i>
               </a>
             </div>
             <div class="media-icon">
-              <a href="http://www.facebook.com/unswsocialsoccer" target="_blank">
+              <a href="http://instagram.com/unswsocialsoccer" target="_blank">
                 <i ng-class="'fa fa-instagram fa-2x fa-fw'"></i>
               </a>
             </div>

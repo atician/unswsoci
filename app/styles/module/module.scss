@@ -5,9 +5,11 @@
 .logo-header {
   height: 200px;
 }
+.logo-map {
+  width: 500px;
+}
 .nav {
   $nav-height: 50px;
-  //$nav-width: 800px;
   height: $nav-height;
   width: 100%;
   font-size: 0.8em;
@@ -15,34 +17,30 @@
   cursor: pointer;
   background-color: $yellow;
   .nav-item {
-    //border: 1px red solid;
     height: $nav-height;
-    //width: $nav-width / 5;
     width: 100%;
     z-index: 1000;
+      transition: background-color 0.5s, color 0.3s, box-shadow 0.3s;
     &:hover {
-      background-color: $blue;
-      color: white;
-      transition: background-color 0.5s, color 0.5s;
+      background-color: $yellow;
+      color: black;
       box-shadow: 0px -2px 1px 1px rgba(255, 255, 255, 0.2) inset;
     }
     &:hover > .nav-dropdown {
-      //border: 2px white solid;
       display: block;
     }
     border-radius: 5px;
   }
   .nav-item-text {
     height: $nav-height;
-    //background-color: silver;
   }
   .nav-dropdown {
     z-index: 1000;
     background-color: $blue;
-    //background-color: #144496;
     display: none;
     border-radius: 5px;
-    //border: 2px purple solid
+    opacity: 0.9;
+    color: white;
   }
   .nav-dropdown-right {
     position: relative;
@@ -71,6 +69,7 @@
   }
   i {
     color: $yellow;
+    transition: color 0.5s;
     &:hover {
       color: $blue;
     }
@@ -80,5 +79,5 @@
   // position: absolute;
   // right: 0;
   // bottom: 0;
-  z-index: 1000;
+  // z-index: 1000;
 }

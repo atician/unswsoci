@@ -13,33 +13,13 @@ angular
     'ngTouch',
     'ui.router'
   ])
-  // .config(function ($routeProvider) {
-  //   $routeProvider
-  //     .when('/', {
-  //       templateUrl: 'views/main.html',
-  //       controller: 'MainCtrl',
-  //       controllerAs: 'main'
-  //     })
-  //     .when('/about', {
-  //       templateUrl: 'views/about.html',
-  //       controller: 'AboutCtrl',
-  //       controllerAs: 'about'
-  //     })
-  //     .otherwise({
-  //       redirectTo: '/'
-  //     });
-  // });
-  // .run(function($rootScope) {
+  // .run(['$rootScope', function($rootScope) {
   //     $rootScope.$on('$stateChangeStart', 
-  //     function(event, toState, toParams, fromState, fromParams){ 
-  //       console.log('start', 'from', fromState, 'to', toState);
+  //     function(event, toState, toParams, fromState){ 
+  //       console.log('from', fromState, 'to', toState);
   //     });
-  //     $rootScope.$on('$stateChangeSuccess', 
-  //     function(event, toState, toParams, fromState, fromParams){
-  //       console.log('success', 'from', fromState, 'to', toState);
-  //     });
-  // })
-  .config(function($stateProvider, $urlRouterProvider) {
+  // }])
+  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /
     $urlRouterProvider.otherwise('/home/details');
@@ -59,10 +39,10 @@ angular
         url: 'about us/vision',
         templateUrl: 'views/about-us/vision.html'
       })
-      .state('root.home fields', {
-        url: 'about us/home fields/village green',
-        templateUrl: 'views/about-us/home-fields/village-green.html'
-      })
+      // .state('root.home fields', {
+      //   url: 'about us/home fields/village green',
+      //   templateUrl: 'views/about-us/village-green.html'
+      // })
       .state('root.events', {
         url: 'events/calendar',
         templateUrl: 'views/events/calendar.html'
@@ -119,24 +99,28 @@ angular
         url: '/excutives',
         templateUrl: 'views/about-us/executives.html'
       })
-      // home fields
       .state('about us.home fields', {
         url: '/home fields',
-        abstract: true,
-        template: '<ui-view/>'
+        templateUrl: 'views/about-us/home-fields.html'
       })
-      .state('about us.home fields.village green', {
-        url: '/village green',
-        templateUrl: 'views/about-us/home-fields/village-green.html'
-      })
-      .state('about us.home fields.asb', {
-        url: '/asb',
-        templateUrl: 'views/about-us/home-fields/asb.html'
-      })
-      .state('about us.home fields.david phillips', {
-        url: '/david phillips',
-        templateUrl: 'views/about-us/home-fields/david-phillips.html'
-      })
+      // // home fields
+      // .state('about us.home fields', {
+      //   url: '/home fields',
+      //   abstract: true,
+      //   template: '<ui-view/>'
+      // })
+      // .state('about us.home fields.village green', {
+      //   url: '/village green',
+      //   templateUrl: 'views/about-us/village-green.html'
+      // })
+      // .state('about us.home fields.asb', {
+      //   url: '/asb',
+      //   templateUrl: 'views/about-us/asb.html'
+      // })
+      // .state('about us.home fields.david phillips', {
+      //   url: '/david phillips',
+      //   templateUrl: 'views/about-us/david-phillips.html'
+      // })
       // events
       .state('events', {
         url: '/events',
@@ -166,6 +150,5 @@ angular
       .state('online store.online store', {
         url: '/online store',
         templateUrl: 'views/online-store/online-store.html'
-      })
-      ;
-  });
+      });
+  }]);
