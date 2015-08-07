@@ -73,14 +73,14 @@ angular
         url: '/draw',
         templateUrl: 'views/home/draw.html'
       })
-      .state('home.wet weather', {
-        url: '/wet weather',
-        templateUrl: 'views/home/wet-weather.html'
-      })
-      .state('home.applications', {
-        url: '/applications',
-        templateUrl: 'views/home/applications.html'
-      })
+      // .state('home.wet weather', {
+      //   url: '/wet weather',
+      //   templateUrl: 'views/home/wet-weather.html'
+      // })
+      // .state('home.applications', {
+      //   url: '/applications',
+      //   templateUrl: 'views/home/applications.html'
+      // })
       // about us
       .state('about us', {
         url: '/about us',

@@ -3,7 +3,7 @@
   background-color: white;
   position: relative;
   max-width: $max-width;
-  min-width: $min-width;
+  //min-width: $min-width;
   width: 100%;
 }
 #footer {
@@ -14,19 +14,19 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   max-width: $max-width;
-  min-width: $min-width;
+  //min-width: $min-width;
   width: 100%;
 }
 #primary-nav {
   //background-color: yellow;
   max-width: $max-width;
-  min-width: $min-width;
+  //min-width: $min-width;
   width: 100%;
 }
 #main-content {
   background-color: silver;
   font-size: 1em;
   max-width: $max-width;
-  min-width: $min-width;
+  //min-width: $min-width;
   width: 100%;
 }

@@ -21,25 +21,27 @@
     <!-- Add your site or application content here -->
     <section id="header" layout="row" layout-align="center end">
       <img class="logo logo-header" src="images/header-logo.jpg">
-      <div class="header-media-container" layout="row">
-        <div class="media-icon">
+      <section class="header-media-container" layout="row">
+        <div class="media-icon" layout="row" layout-align="center center">
           <a href="http://twitter.com/unswsoc3" target="_blank">
-            <i ng-class="'fa fa-twitter-square fa-2x fa-fw'"></i>
+            <!-- <i ng-class="'fa fa-twitter-square fa-2x fa-fw'"></i> -->
+            <img src="images/social/twitter.png">
           </a>
         </div>
-        <div class="media-icon">
+        <div class="media-icon" layout="row" layout-align="center center">
           <a href="http://www.facebook.com/unswsocialsoccer" target="_blank">
-            <i ng-class="'fa fa-facebook-square fa-2x fa-fw'"></i>
+            <!-- <i ng-class="'fa fa-facebook-square fa-2x fa-fw'"></i> -->
+            <img src="images/social/fb.png">
           </a>
         </div>
-        <div class="media-icon">
+        <div class="media-icon" layout="row" layout-align="center center">
           <a href="http://instagram.com/unswsocialsoccer" target="_blank">
-            <i ng-class="'fa fa-instagram fa-2x fa-fw'"></i>
+            <!-- <i ng-class="'fa fa-instagram fa-2x fa-fw'"></i> -->
+            <img src="images/social/instagram.png">
           </a>
         </div>
-      </div>
+      </section>
     </section>
-
     <section id="primary-nav" layout="row" layout-align="center">
       <div class="nav" layout="row">
         <div class="nav-item"
@@ -53,7 +55,7 @@
           <!-- sub tabs for home -->
           <div class="nav-dropdown" ng-if="$index === 0">
             <div class="nav-item"
-              ng-repeat="item in ['details', 'scores', 'draw', 'wet weather', 'applications']">
+              ng-repeat="item in ['details', 'scores', 'draw']">
               <span class="nav-item-text"
                 ui-sref="home.{{item}}"
                 layout="row"
@@ -137,36 +139,28 @@
         <div flex layout="column" layout-align="center center">
           <p><strong>Follow us</strong></p>
           <div layout="row">
-            <div class="media-icon">
+            <div class="media-icon" layout="row" layout-align="center center">
               <a href="http://twitter.com/unswsoc3" target="_blank">
-                <i ng-class="'fa fa-twitter-square fa-2x fa-fw'"></i>
+                <!-- <i ng-class="'fa fa-twitter-square fa-2x fa-fw'"></i> -->
+                <img src="images/social/twitter.png">
               </a>
             </div>
-            <div class="media-icon">
+            <div class="media-icon" layout="row" layout-align="center center">
               <a href="http://www.facebook.com/unswsocialsoccer" target="_blank">
-                <i ng-class="'fa fa-facebook-square fa-2x fa-fw'"></i>
+                <!-- <i ng-class="'fa fa-facebook-square fa-2x fa-fw'"></i> -->
+                <img src="images/social/fb.png">
               </a>
             </div>
-            <div class="media-icon">
+            <div class="media-icon" layout="row" layout-align="center center">
               <a href="http://instagram.com/unswsocialsoccer" target="_blank">
-                <i ng-class="'fa fa-instagram fa-2x fa-fw'"></i>
+                <!-- <i ng-class="'fa fa-instagram fa-2x fa-fw'"></i> -->
+                <img src="images/social/instagram.png">
               </a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-<!--      <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
- -->
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>

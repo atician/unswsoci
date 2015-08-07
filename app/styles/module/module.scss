@@ -64,20 +64,26 @@
   background-color: $blue;
 }
 .media-icon {
+  width: 35px;
+  height: 35px;
+  margin: 0 0.1em;
   a:link, a:visited, a:hover, a:active {
     color: white;
   }
-  i {
-    color: $yellow;
-    transition: color 0.5s;
+  img {
+    width: 30px;
+    height: 30px;
+    transition: all 0.3s;
     &:hover {
-      color: $blue;
+      width: 35px;
+      height: 35px;
     }
   }
 }
 .header-media-container {
-  // position: absolute;
-  // right: 0;
-  // bottom: 0;
-  // z-index: 1000;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  padding: 0.1em 0.1em;
 }
