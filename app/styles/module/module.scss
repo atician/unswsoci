@@ -64,20 +64,21 @@
   background-color: $blue;
 }
 .media-icon {
-  width: 35px;
-  height: 35px;
-  margin: 0 0.1em;
+  // width: 35px;
+  // height: 35px;
+  // margin: 0 0.1em;
+  // float: left;
   a:link, a:visited, a:hover, a:active {
-    color: white;
+    text-decoration: none;
   }
   img {
     width: 30px;
     height: 30px;
-    transition: all 0.3s;
-    &:hover {
-      width: 35px;
-      height: 35px;
-    }
+    // transition: all 0.3s;
+    // &:hover {
+    //   width: 35px;
+    //   height: 35px;
+    // }
   }
 }
 .header-media-container {

@@ -11,7 +11,8 @@
 angular
   .module('unswsociApp', [
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'ui.materialize'
   ])
   // .run(['$rootScope', function($rootScope) {
   //     $rootScope.$on('$stateChangeStart', 

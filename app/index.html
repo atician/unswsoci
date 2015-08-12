@@ -16,103 +16,135 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
-  <body ng-app="unswsociApp" layout="column" layout-align="start center">
-
-    <!-- Add your site or application content here -->
-    <section id="header" layout="row" layout-align="center end">
-      <img class="logo logo-header" src="images/header-logo.jpg">
-      <section class="header-media-container" layout="row">
-        <div class="media-icon" layout="row" layout-align="center center">
-          <a href="http://twitter.com/unswsoc3" target="_blank">
-            <!-- <i ng-class="'fa fa-twitter-square fa-2x fa-fw'"></i> -->
-            <img src="images/social/twitter.png">
-          </a>
-        </div>
-        <div class="media-icon" layout="row" layout-align="center center">
-          <a href="http://www.facebook.com/unswsocialsoccer" target="_blank">
-            <!-- <i ng-class="'fa fa-facebook-square fa-2x fa-fw'"></i> -->
-            <img src="images/social/fb.png">
-          </a>
-        </div>
-        <div class="media-icon" layout="row" layout-align="center center">
-          <a href="http://instagram.com/unswsocialsoccer" target="_blank">
-            <!-- <i ng-class="'fa fa-instagram fa-2x fa-fw'"></i> -->
-            <img src="images/social/instagram.png">
-          </a>
-        </div>
+  <body ng-app="unswsociApp">
+    <div class="container">
+      <section id="header">
+        <img class="logo logo-header" src="images/header-logo.jpg">
       </section>
-    </section>
-    <section id="primary-nav" layout="row" layout-align="center">
-      <div class="nav" layout="row">
-        <div class="nav-item"
-          ng-repeat="item in ['home', 'about us', 'events', 'contact us', 'online store']">
-          <span class="nav-item-text"
-            ui-sref="root.{{item}}"
-            layout="row"
-            layout-align="center center">
-            {{item | uppercase}}
-          </span>
-          <!-- sub tabs for home -->
-          <div class="nav-dropdown" ng-if="$index === 0">
-            <div class="nav-item"
-              ng-repeat="item in ['details', 'scores', 'draw']">
-              <span class="nav-item-text"
-                ui-sref="home.{{item}}"
-                layout="row"
-                layout-align="center center">
-                {{item | uppercase}}
-              </span>
-            </div>
-          </div>
-          <!-- sub tabs for about us -->
-          <div class="nav-dropdown" ng-if="$index === 1">
-            <div class="nav-item"
-              ng-repeat="item in ['vision', 'history', 'executives', 'home fields']">
-              <span class="nav-item-text"
-                ui-sref="about us.{{item}}"
-                layout="row"
-                layout-align="center center">
-                {{item | uppercase}}
-              </span>
-            </div>
-            <!-- home fields and sub sub tabs for home fields -->
-<!--             <div class="nav-item"
-              ng-repeat="item in ['home fields']">
-              <span class="nav-item-text"
-                ui-sref="root.{{item}}"
-                layout="row"
-                layout-align="center center">
-                {{item | uppercase}}
-              </span>
-              <div class="nav-dropdown nav-dropdown-right">
-                <div class="nav-item"
-                  ng-repeat="item in ['village green', 'asb', 'david phillips']">
-                  <span class="nav-item-text"
-                    ui-sref="about us.home fields.{{item}}"
-                    layout="row"
-                    layout-align="center center">
-                    {{item | uppercase}}
-                  </span>
+      <section id="primary-nav">
+        <nav>
+          <!-- home dropdown -->
+          <ul id='homeDropdown' class='dropdown-content'>
+            <li ng-repeat="item in ['details', 'scores', 'draw']">
+              <a ui-sref="home.{{item}}">{{item | uppercase}}</a>
+            </li>
+          </ul>
+          <!-- about us dropdown -->
+          <ul id='aboutUsDropdown' class='dropdown-content'>
+            <li ng-repeat="item in ['vision', 'history', 'executives', 'home fields']">
+              <a ui-sref="about us.{{item}}">{{item | uppercase}}</a>
+            </li>
+          </ul>
+          <!-- events dropdown -->
+          <ul id='eventsDropdown' class='dropdown-content'>
+            <li ng-repeat="item in ['calendar']">
+              <a ui-sref="events.{{item}}">{{item | uppercase}}</a>
+            </li>
+          </ul>
+          <!-- sidenav for mobile view -->
+          <ul id='side-nav' class='side-nav'>
+            <ul class="collapsible collapsible-accordion">
+              <li>
+                <a class="collapsible-header">HOME<i class="mdi-navigation-arrow-drop-down"></i></a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li ng-repeat="item in ['details', 'scores', 'draw']">
+                      <a ui-sref="home.{{item}}">{{item | uppercase}}</a>
+                    </li>
+                  </ul>
                 </div>
-              </div>
-            </div> -->
-          </div>
-          <!-- sub tabs for events -->
-          <div class="nav-dropdown" ng-if="$index === 2">
-            <div class="nav-item"
-              ng-repeat="item in ['calendar']">
-              <span class="nav-item-text"
-                ui-sref="events.{{item}}"
-                layout="row"
-                layout-align="center center">
-                {{item | uppercase}}
-              </span>
+              </li>
+              <li>
+                <a class="collapsible-header">ABOUT US<i class="mdi-navigation-arrow-drop-down"></i></a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li ng-repeat="item in ['vision', 'history', 'executives', 'home fields']">
+                      <a ui-sref="about us.{{item}}">{{item | uppercase}}</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="collapsible-header">ABOUT US<i class="mdi-navigation-arrow-drop-down"></i></a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li ng-repeat="item in ['calendar']">
+                      <a ui-sref="events.{{item}}">{{item | uppercase}}</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <li><a ui-sref="root.contact us">CONTACT US</a></li>
+            <li><a ui-sref="root.online store">ONLINE STORE</a></li>
+          </ul>
+          <div class="nav-wrapper">
+            <!-- hamburger for mobile view -->
+            <a href="#"
+              class="button-collapse"
+              data-activates="side-nav"
+              data-sidenav="left"
+              data-closeonclick="true">
+              <i class="mdi-navigation-menu"></i>
+            </a>
+            <!-- social media icons -->
+            <div class="brand-logo right media-icon">
+              <a class="" href="http://www.facebook.com/unswsocialsoccer" target="_blank">
+                <img src="images/social/fb.png">
+              </a>
+              <a href="http://twitter.com/unswsoc3" target="_blank">
+                <img src="images/social/twitter.png">
+              </a>
+              <a href="http://instagram.com/unswsocialsoccer" target="_blank">
+                <img src="images/social/instagram.png">
+              </a>
             </div>
+            <!-- root nav items -->
+            <ul class="left hide-on-med-and-down">
+              <!-- home dropdown trigger -->
+              <li>
+                <a class="dropdown-button"
+                  ui-sref="root.home"
+                  dropdown
+                  data-activates="homeDropdown"
+                  data-beloworigin="true"
+                  data-hover="true">
+                  HOME<i class="material-icons right">arrow_drop_down</i>
+                </a>
+              </li>
+              <!-- about us dropdown trigger -->
+              <li>
+                <a class="dropdown-button"
+                  ui-sref="root.about us"
+                  dropdown
+                  data-activates="aboutUsDropdown"
+                  data-beloworigin="true"
+                  data-hover="true">
+                  ABOUT US<i class="material-icons right">arrow_drop_down</i>
+                </a>
+              </li>
+              <!-- events dropdown trigger -->
+              <li>
+                <a class="dropdown-button"
+                  ui-sref="root.events"
+                  dropdown
+                  data-activates="eventsDropdown"
+                  data-beloworigin="true"
+                  data-hover="true">
+                  EVENTS<i class="material-icons right">arrow_drop_down</i>
+                </a>
+              </li>
+              <!-- contact us -->
+              <li><a ui-sref="root.contact us">CONTACT US</a></li>
+              <!-- online store -->
+              <li><a ui-sref="root.online store">ONLINE STORE</a></li>
+            </ul>
           </div>
-        </div>
-      </div>
-    </section>
+        </nav>
+      </section>
+    </div>
 
     <section id="main-content" layout="row" layout-align="space-between">
       <!-- main content -->
