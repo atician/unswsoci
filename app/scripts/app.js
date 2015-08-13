@@ -73,6 +73,6 @@ angular
       .state('about us.home fields', {
         url: '/home fields',
         templateUrl: 'views/about-us/home-fields.html'
-      })
+      });
 
   }]);
