@@ -3,207 +3,151 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Welcome to the official Social Soccer Society site of UNSW">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <link rel="stylesheet" href="bower_components/materialize/bin/materialize.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body ng-app="unswsociApp">
-    <div class="container">
-      <section id="header">
-        <img class="logo logo-header" src="images/header-logo.jpg">
-      </section>
-      <section id="primary-nav">
-        <nav>
-          <!-- home dropdown -->
-          <ul id='homeDropdown' class='dropdown-content'>
-            <li ng-repeat="item in ['details', 'scores', 'draw']">
-              <a ui-sref="home.{{item}}">{{item | uppercase}}</a>
-            </li>
-          </ul>
-          <!-- about us dropdown -->
-          <ul id='aboutUsDropdown' class='dropdown-content'>
-            <li ng-repeat="item in ['vision', 'history', 'executives', 'home fields']">
-              <a ui-sref="about us.{{item}}">{{item | uppercase}}</a>
-            </li>
-          </ul>
-          <!-- events dropdown -->
-          <ul id='eventsDropdown' class='dropdown-content'>
-            <li ng-repeat="item in ['calendar']">
-              <a ui-sref="events.{{item}}">{{item | uppercase}}</a>
-            </li>
-          </ul>
-          <!-- sidenav for mobile view -->
-          <ul id='side-nav' class='side-nav'>
-            <ul class="collapsible collapsible-accordion">
-              <li>
-                <a class="collapsible-header">HOME<i class="mdi-navigation-arrow-drop-down"></i></a>
-                <div class="collapsible-body">
-                  <ul>
-                    <li ng-repeat="item in ['details', 'scores', 'draw']">
-                      <a ui-sref="home.{{item}}">{{item | uppercase}}</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <a class="collapsible-header">ABOUT US<i class="mdi-navigation-arrow-drop-down"></i></a>
-                <div class="collapsible-body">
-                  <ul>
-                    <li ng-repeat="item in ['vision', 'history', 'executives', 'home fields']">
-                      <a ui-sref="about us.{{item}}">{{item | uppercase}}</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <a class="collapsible-header">ABOUT US<i class="mdi-navigation-arrow-drop-down"></i></a>
-                <div class="collapsible-body">
-                  <ul>
-                    <li ng-repeat="item in ['calendar']">
-                      <a ui-sref="events.{{item}}">{{item | uppercase}}</a>
-                    </li>
-                  </ul>
-                </div>
+    <header class="container">
+      <div class="row no-margin">
+        <img class="logo-header col s12" src="images/header-logo.jpg">
+        <div class="col s12">
+          <nav class="amber">
+            <!-- about us dropdown -->
+            <ul id='aboutUsDropdown' class='dropdown-content indigo darken-4'>
+              <li ng-repeat="item in ['vision', 'history', 'executives', 'home fields']">
+                <a class="grey-text text-darken-2" ui-sref="about us.{{item}}">{{item | uppercase}}</a>
               </li>
             </ul>
-            <li><a ui-sref="root.contact us">CONTACT US</a></li>
-            <li><a ui-sref="root.online store">ONLINE STORE</a></li>
-          </ul>
-          <div class="nav-wrapper">
-            <!-- hamburger for mobile view -->
-            <a href="#"
-              class="button-collapse"
-              data-activates="side-nav"
-              data-sidenav="left"
-              data-closeonclick="true">
-              <i class="mdi-navigation-menu"></i>
-            </a>
-            <!-- social media icons -->
-            <div class="brand-logo right media-icon">
-              <a class="" href="http://www.facebook.com/unswsocialsoccer" target="_blank">
-                <img src="images/social/fb.png">
-              </a>
-              <a href="http://twitter.com/unswsoc3" target="_blank">
-                <img src="images/social/twitter.png">
-              </a>
-              <a href="http://instagram.com/unswsocialsoccer" target="_blank">
-                <img src="images/social/instagram.png">
-              </a>
-            </div>
-            <!-- root nav items -->
-            <ul class="left hide-on-med-and-down">
-              <!-- home dropdown trigger -->
-              <li>
-                <a class="dropdown-button"
-                  ui-sref="root.home"
-                  dropdown
-                  data-activates="homeDropdown"
-                  data-beloworigin="true"
-                  data-hover="true">
-                  HOME<i class="material-icons right">arrow_drop_down</i>
-                </a>
-              </li>
-              <!-- about us dropdown trigger -->
-              <li>
-                <a class="dropdown-button"
-                  ui-sref="root.about us"
-                  dropdown
-                  data-activates="aboutUsDropdown"
-                  data-beloworigin="true"
-                  data-hover="true">
-                  ABOUT US<i class="material-icons right">arrow_drop_down</i>
-                </a>
-              </li>
-              <!-- events dropdown trigger -->
-              <li>
-                <a class="dropdown-button"
-                  ui-sref="root.events"
-                  dropdown
-                  data-activates="eventsDropdown"
-                  data-beloworigin="true"
-                  data-hover="true">
-                  EVENTS<i class="material-icons right">arrow_drop_down</i>
-                </a>
-              </li>
-              <!-- contact us -->
+            <!-- sidenav for mobile view -->
+            <ul id='side-nav' class='side-nav amber'>
+              <li><a ui-sref="root.home">HOME</a></li>
+              <ul class="collapsible collapsible-accordion">
+                <li class="amber">
+                  <a class="collapsible-header">ABOUT US<i class="mdi-navigation-arrow-drop-down"></i></a>
+                  <div class="collapsible-body indigo darken-4">
+                    <ul>
+                      <li ng-repeat="item in ['vision', 'history', 'executives', 'home fields']">
+                        <a class="white-text" ui-sref="about us.{{item}}">{{item | uppercase}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <li><a ui-sref="root.events">EVENTS</a></li>
               <li><a ui-sref="root.contact us">CONTACT US</a></li>
-              <!-- online store -->
-              <li><a ui-sref="root.online store">ONLINE STORE</a></li>
+              <li><a ui-sref="root.the comp">THE COMP</a></li>
             </ul>
-          </div>
-        </nav>
-      </section>
-    </div>
-
-    <section id="main-content" layout="row" layout-align="space-between">
-      <!-- main content -->
-      <md-whiteframe class="md-whiteframe-z3" flex="70" ui-view>
-        <!-- content based on route -->
-      </md-whiteframe>
-      <!-- sponsorship content -->
-      <md-whiteframe class="md-whiteframe-z3" flex layout="column" layout-align="start center">
-        <h3><strong>Sponsors</strong></h3>
-        <img class="logo" src="images/sponsors/arc.jpg">
-      </md-whiteframe>
-    </section>
-
-    <section id="footer" layout="column">
-      <div layout="row">
-        <div class="box white" flex></div>
-        <div class="box yellow" flex></div>
-        <div class="box blue" flex></div>
-      </div>
-      <br>
-      <div layout="row" layout-align="space-around start">
-        <div flex layout="row" layout-align="center">
-          <p><strong>UNSW Social Soccer Society</strong></p>
-        </div>
-        <div flex layout="column" layout-align="center center">
-          <p><strong>Follow us</strong></p>
-          <div layout="row">
-            <div class="media-icon" layout="row" layout-align="center center">
-              <a href="http://twitter.com/unswsoc3" target="_blank">
-                <!-- <i ng-class="'fa fa-twitter-square fa-2x fa-fw'"></i> -->
-                <img src="images/social/twitter.png">
+            <div class="nav-wrapper">
+              <!-- hamburger for mobile view -->
+              <a href="#"
+                class="button-collapse"
+                data-activates="side-nav"
+                data-sidenav="left"
+                data-closeonclick="true">
+                <i class="mdi-navigation-menu"></i>
               </a>
+              <!-- social media icons -->
+              <div class="brand-logo right media-icon">
+                <a href="http://www.facebook.com/unswsocialsoccer" target="_blank">
+                  <img src="images/social/fb.png">
+                </a>
+                <a href="http://twitter.com/unswsoc3" target="_blank">
+                  <img src="images/social/twitter.png">
+                </a>
+                <a href="http://instagram.com/unswsocialsoccer" target="_blank">
+                  <img src="images/social/instagram.png">
+                </a>
+              </div>
+              <!-- root nav items -->
+              <ul class="left hide-on-med-and-down">
+                <!-- home -->
+                <li><a class="grey-text text-darken-2" ui-sref="root.home">HOME</a></li>
+                <!-- about us dropdown trigger -->
+                <li>
+                  <a class="dropdown-button grey-text text-darken-2"
+                    ui-sref="root.about us"
+                    dropdown
+                    data-activates="aboutUsDropdown"
+                    data-beloworigin="true"
+                    data-hover="true">
+                    ABOUT US<i class="material-icons right">arrow_drop_down</i>
+                  </a>
+                </li>
+                <!-- events -->
+                <li><a class="grey-text text-darken-2" ui-sref="root.events">EVENTS</a></li>
+                <!-- contact us -->
+                <li><a class="grey-text text-darken-2" ui-sref="root.contact us">CONTACT US</a></li>
+                <!-- online store -->
+                <li><a class="grey-text text-darken-2" ui-sref="root.the comp">THE COMP</a></li>
+              </ul>
             </div>
-            <div class="media-icon" layout="row" layout-align="center center">
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="container grey lighten-2">
+      <div class="row no-margin">
+        <!-- main content -->
+        <div class="col s12 l9">
+          <div class="card-panel z-depth-0 grey lighten-2" ui-view>
+          </div>
+          <!-- content based on route -->
+        </div>
+        <!-- sponsorship content -->
+        <div class="col l3 hide-on-med-and-down">
+          <div class="card-panel z-depth-2 grey">
+            <h4 class="center-align"><strong>Sponsors</strong></h4>
+            <img class="responsive-img" src="images/sponsors/arc.jpg">
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="container page-footer no-margin indigo darken-4">
+      <div class="container">
+        <div class="row no-margin">
+          <div class="col l6 s12">
+            <h5 class="white-text">UNSW Social Soccer Society</h5>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Follow Us</h5>
+            <div class="media-icon">
               <a href="http://www.facebook.com/unswsocialsoccer" target="_blank">
-                <!-- <i ng-class="'fa fa-facebook-square fa-2x fa-fw'"></i> -->
                 <img src="images/social/fb.png">
               </a>
-            </div>
-            <div class="media-icon" layout="row" layout-align="center center">
+              <a href="http://twitter.com/unswsoc3" target="_blank">
+                <img src="images/social/twitter.png">
+              </a>
               <a href="http://instagram.com/unswsocialsoccer" target="_blank">
-                <!-- <i ng-class="'fa fa-instagram fa-2x fa-fw'"></i> -->
                 <img src="images/social/instagram.png">
               </a>
             </div>
           </div>
         </div>
       </div>
-    </section>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2015 UNSW SOCIAL SOCCER SOCIETY
+        </div>
+      </div>
+    </footer>
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/materialize/bin/materialize.js"></script>
     <script src="bower_components/angular-materialize/src/angular-materialize.js"></script>
     <!-- endbower -->
@@ -211,8 +155,8 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
+<!--         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
-        <!-- endbuild -->
+ -->        <!-- endbuild -->
 </body>
 </html>
