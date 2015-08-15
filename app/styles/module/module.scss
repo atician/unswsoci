@@ -6,9 +6,15 @@
 .list-reset {
   ul {
     list-style: disc inside;
+    li {
+      list-style: disc inside;
+    }
   }
-  li {
-    list-style: disc inside;
+  ol {
+    list-style: decimal;
+    li {
+      list-style: decimal;
+    }
   }
 }
 .logo {

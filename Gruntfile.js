@@ -404,6 +404,12 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
         }, {
+          // materialize fonts
+          expand: true,
+          cwd: 'bower_components/materialize',
+          src: ['font/material-design-icons/*', 'font/roboto/*'],
+          dest: '<%= yeoman.dist %>'
+        }, {
           expand: true,
           cwd: '.',
           src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',

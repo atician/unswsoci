@@ -23,7 +23,7 @@ angular
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /
-    $urlRouterProvider.otherwise('/home/details');
+    $urlRouterProvider.otherwise('/home');
     // Now set up the states
     $stateProvider
       .state('root', {
@@ -73,6 +73,10 @@ angular
       .state('about us.home fields', {
         url: '/home fields',
         templateUrl: 'views/about-us/home-fields.html'
+      })
+      .state('about us.life membership', {
+        url: '/life membership',
+        templateUrl: 'views/about-us/life-membership.html'
       });
 
   }]);
