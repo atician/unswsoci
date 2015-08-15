@@ -11,7 +11,8 @@
 angular
   .module('unswsociApp', [
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'ui.materialize'
   ])
   // .run(['$rootScope', function($rootScope) {
   //     $rootScope.$on('$stateChangeStart', 
@@ -22,7 +23,7 @@ angular
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /
-    $urlRouterProvider.otherwise('/home/details');
+    $urlRouterProvider.otherwise('/home');
     // Now set up the states
     $stateProvider
       .state('root', {
@@ -32,55 +33,25 @@ angular
       })
       // top level routes; index pages
       .state('root.home', {
-        url: 'home/details',
+        url: 'home',
         templateUrl: 'views/home/home.html'
       })
       .state('root.about us', {
         url: 'about us/vision',
         templateUrl: 'views/about-us/vision.html'
       })
-      // .state('root.home fields', {
-      //   url: 'about us/home fields/village green',
-      //   templateUrl: 'views/about-us/village-green.html'
-      // })
       .state('root.events', {
-        url: 'events/calendar',
-        templateUrl: 'views/events/calendar.html'
+        url: 'events',
+        templateUrl: 'views/events/events.html'
       })
       .state('root.contact us', {
         url: 'contact us',
         templateUrl: 'views/contact-us/contact-us.html'
       })
-      .state('root.online store', {
-        url: 'online store',
+      .state('root.the comp', {
+        url: 'the comp',
         templateUrl: 'views/online-store/online-store.html'
       })
-      // home
-      .state('home', {
-        url: '/home',
-        abstract: true,
-        template: '<ui-view/>'
-      })
-      .state('home.details', {
-        url: '/details',
-        templateUrl: 'views/home/home.html'
-      })
-      .state('home.scores', {
-        url: '/scores',
-        templateUrl: 'views/home/scores.html'
-      })
-      .state('home.draw', {
-        url: '/draw',
-        templateUrl: 'views/home/draw.html'
-      })
-      // .state('home.wet weather', {
-      //   url: '/wet weather',
-      //   templateUrl: 'views/home/wet-weather.html'
-      // })
-      // .state('home.applications', {
-      //   url: '/applications',
-      //   templateUrl: 'views/home/applications.html'
-      // })
       // about us
       .state('about us', {
         url: '/about us',
@@ -103,52 +74,9 @@ angular
         url: '/home fields',
         templateUrl: 'views/about-us/home-fields.html'
       })
-      // // home fields
-      // .state('about us.home fields', {
-      //   url: '/home fields',
-      //   abstract: true,
-      //   template: '<ui-view/>'
-      // })
-      // .state('about us.home fields.village green', {
-      //   url: '/village green',
-      //   templateUrl: 'views/about-us/village-green.html'
-      // })
-      // .state('about us.home fields.asb', {
-      //   url: '/asb',
-      //   templateUrl: 'views/about-us/asb.html'
-      // })
-      // .state('about us.home fields.david phillips', {
-      //   url: '/david phillips',
-      //   templateUrl: 'views/about-us/david-phillips.html'
-      // })
-      // events
-      .state('events', {
-        url: '/events',
-        abstract: true,
-        template: '<ui-view/>'
-      })
-      .state('events.calendar', {
-        url: '/calendar',
-        templateUrl: 'views/events/calendar.html'
-      })
-      // contact us
-      .state('contact us', {
-        url: '/contact us',
-        abstract: true,
-        template: '<ui-view/>'
-      })
-      .state('contact us.contact us', {
-        url: '/contact us',
-        templateUrl: 'views/contact-us/contact-us.html'
-      })
-      // online store
-      .state('online store', {
-        url: '/online store',
-        abstract: true,
-        template: '<ui-view/>'
-      })
-      .state('online store.online store', {
-        url: '/online store',
-        templateUrl: 'views/online-store/online-store.html'
+      .state('about us.life membership', {
+        url: '/life membership',
+        templateUrl: 'views/about-us/life-membership.html'
       });
+
   }]);

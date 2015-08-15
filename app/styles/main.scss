@@ -1,7 +1,6 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,700);
+//$icon-font-path: "../bower_components/materialize/font/material-design-icons";
+//@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,700);
 // bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 @import "materialize/sass/materialize.scss";
 // endbower
 @import "base/base.scss";
